@@ -3,7 +3,7 @@ const morgan = require('morgan');
 const cors = require('cors');
 const app = express();
 require('dotenv').config();
-console.log(process.env.MONGO_URL);
+
 const port = 3000;
 require('./db/db');
 app.use(express.json());
@@ -14,6 +14,7 @@ app.use(morgan('dev'));
 app.use('/api', require('./routes/index'));
 app.use((err, req, res, next) => {
     // Log the error
+    
     console.error(err);
   
     // Set a status code and send an error response
