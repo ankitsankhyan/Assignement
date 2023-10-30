@@ -1,4 +1,4 @@
-const Book = require('../models/book');
+const Book = require('../models/Book');
 module.exports.create = async (req, res) => {
   const { title, auther, description } = req.body;
     const book = new Book({ title, auther, description });
