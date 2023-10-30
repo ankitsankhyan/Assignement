@@ -28,20 +28,20 @@ module.exports.deletebook = async (req, res) => {
 
 module.exports.updatebook = async (req, res) => {
  const { id } = req.params;
-    const { title, author, description } = req.body;
-
+    const { title, auther, description } = req.body;
+    
     let book = await Book.findById(id);
     if(!book) return res.status(404).json({
         message: 'Book not found!',
     });
     book.title = title;
-    book.auther = author;
+    book.auther = auther;
     book.description = description;
 
     await book.save();
     return res.json({
         message: 'Book updated!',
-        updatedbook,
+        updated: book
     });
 
 };
