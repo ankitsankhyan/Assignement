@@ -10,7 +10,9 @@ app.use(express.json());
 
 app.use(cors());
 app.use(morgan('dev'));
-
+app.get('/', (req, res) => {
+    res.send('Book api is working fine, use postman to use api');
+});
 app.use('/api', require('./routes/index'));
 app.use((err, req, res, next) => {
     // Log the error
