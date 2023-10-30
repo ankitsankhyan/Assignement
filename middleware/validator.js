@@ -1,7 +1,7 @@
 const { check, validationResult } = require("express-validator");
 module.exports.validbook = [
     check("title").trim().not().isEmpty().withMessage("Title is required"),
-    check("author").trim().not().isEmpty().withMessage("Author is required"),
+    check("auther").trim().not().isEmpty().withMessage("Author is required"),
     check("description").trim().not().isEmpty().withMessage("Description is required"),
 ]
 
